@@ -11,6 +11,7 @@ export const defaultSettings: FrontendSettings = {
 	},
 	allowedModules: {},
 	communityNodesEnabled: false,
+	unverifiedCommunityNodesEnabled: true,
 	defaultLocale: '',
 	endpointForm: '',
 	endpointFormTest: '',
@@ -42,9 +43,6 @@ export const defaultSettings: FrontendSettings = {
 				limit: 1,
 			},
 		},
-	},
-	expressions: {
-		evaluator: 'tournament',
 	},
 	executionMode: 'regular',
 	isMultiMain: false,
@@ -149,8 +147,20 @@ export const defaultSettings: FrontendSettings = {
 		enabled: false,
 		summary: true,
 		dashboard: false,
+		dateRanges: [
+			{ key: 'day', licensed: true, granularity: 'hour' },
+			{ key: 'week', licensed: true, granularity: 'day' },
+			{ key: '2weeks', licensed: true, granularity: 'day' },
+			{ key: 'month', licensed: false, granularity: 'day' },
+			{ key: 'quarter', licensed: false, granularity: 'week' },
+			{ key: '6months', licensed: false, granularity: 'week' },
+			{ key: 'year', licensed: false, granularity: 'week' },
+		],
 	},
 	logsView: {
 		enabled: false,
+	},
+	evaluation: {
+		quota: 0,
 	},
 };
